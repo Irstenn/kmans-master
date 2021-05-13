@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+    <title>KMANS</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="public/photon/css/photon.min.css">
+
+    <!-- Electron Javascript -->
+    <script src="public/photon/template-app/app.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <!-- Wrap your entire app inside .window -->
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">KMANS</h1>
+        </header>
+        <div class="window-content">
+            <div class="pane-group">
+            <div class="pane-sm sidebar" style="overflow: auto">
+                <nav class="nav-group">
+                    <ul class="list-group">
+                        <li class="list-group-header">
+                          <input class="form-control search" type="text" placeholder="Rechercher un produit">
+                        </li>
+                    </ul>
+                    <div class="ul">
+                        
+                    </div>
+                      
+                </nav>
+            </div>
+            <div class="pane">
+                <div style="height: 80%; overflow: auto">
+                    <table class="table-striped" style="font-size: 14px;  overflow-y: scroll; margin-top: 10px;">
+                        <thead class="thead-dark">
+                        <tr style="text-align:center">
+                            <th scope="col" width="5%">Quantité</th>
+                            <th scope="col" width="60%">Désignation</th>
+                            <th scope="col" width="15%">P. Unitaire</th>
+                            <th scope="col" width="15%">P. Total</th>
+                            <th scope="col" width="5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody style="height: 500px">
+                        
+                        
+                        </tbody>
+                    </table>
+                  </div>
+                  <table>
+                        <thead style="text-align: right">
+                            <th width='80%' style="text-align:right; font-weight: bold; background-color: #D3D3D3"> Total général </th>
+                            <td style="background-color: #D3D3D3"><input type="text" class="" id="totaux" value="0" size="20" style="text-align:right; font-weight: bold; background-color: #D3D3D3"  readonly></td>
+                        </tthead>
+                    </table>
+                  <hr class="divider" />
+                    
+                    <div  style="margin: 10px">
+                        <button class="btn btn-large btn-primary" id="btn_vider">Vider le panier</button>
+                        <button class="btn btn-large btn-positive pull-right" id="btn_vendre">Executer</button>
+                    </div>
+            </div>
+            </div>
+        </div>
+        <footer class="toolbar toolbar-footer">
+            <h1 class="title">© 2019 Copyright: MLS</h1>
+        </footer>
+    </div>
+
+    <!-- Electron Javascript -->
+    <script src="public/photon/template-app/app.js" charset="utf-8"></script>
+    <script> 
+        // You can also require other files to run in this process
+        require('./renderer.js');
+       
+    </script>
+  </body>
+</html>

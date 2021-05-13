@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gestion des produits</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../public/photon/css/photon.min.css">
+    <style>
+      span,a:hover{
+        cursor: pointer;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Wrap your entire app inside .window -->
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <h1 class="title">Gestion des produits</h1>
+
+            <div class="toolbar-actions">
+                <div class="btn-group">
+                  <button class="btn btn-default">
+                    <span class="icon icon-home"></span>
+                  </button>
+                  <button class="btn btn-default">
+                    <span class="icon icon-folder"></span>
+                  </button>
+                  <button class="btn btn-default active">
+                    <span class="icon icon-cloud"></span>
+                  </button>
+                  <button class="btn btn-default">
+                    <span class="icon icon-popup"></span>
+                  </button>
+                  <button class="btn btn-default">
+                    <span class="icon icon-shuffle"></span>
+                  </button>
+                </div>
+            
+                <button class="btn btn-default">
+                  <span class="icon icon-home icon-text"></span>
+                  Filters
+                </button>
+                
+                <input  type="text" class="form-control form-control-sm pull-right" id="prod_search" 
+                style="width: 200px; height: 15px; margin-right: 10px;" placeholder="Rechercher un produit">
+               
+            </div>
+        </header>
+
+        <div class="window-content">
+            <div class="window-content">
+                <div class="pane-group">
+
+                  <div class="pane-sm sidebar">
+                      <nav class="nav-group">
+                          <h5 class="nav-group-title">Menu</h5>
+                          <a id='addProdBtn' class="nav-group-item">
+                            <span style="color: #5cb85c;" class="icon icon-plus-circled"></span>
+                            Nouveau produit
+                          </a>
+                        </nav>
+                  </div>
+
+                  <div class="pane">
+                      <table class="table-striped">
+                          <thead>
+                            <tr>
+                              <th>#ID</th>
+                              <th>Designation</th>
+                              <th>Prix d'achat</th>
+                              <th>Prix de Vente</th>
+                              <th>Stock</th>
+                              <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody id='table_body'>
+                           
+                          </tbody>
+                        </table>
+                  </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="toolbar toolbar-footer">
+            <h1 class="title">Footer</h1>
+        </footer>
+    </div>
+
+     <!-- Electron Javascript -->
+     <script>
+       window.$ = require('jquery');
+       require('../public/app/js/productsWindow.js');
+     </script>
+  </body>
+</html>
